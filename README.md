@@ -1,2 +1,1 @@
-# three.js-journey-advanced
-# three.js-journey-advanced
+# Three.js journey - advanced techniques 
