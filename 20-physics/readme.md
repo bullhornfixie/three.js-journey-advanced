@@ -34,6 +34,12 @@ In this chapter we learn about physics which is one of the coolest features to a
 - assigned `concreteMaterial` to `floor`
 - increase restitution of contact material, ball bounces higher 
 - then combined these materials to create a single **default material**
+- update the material on floor and sphere with `defaultContactMaterial` 
+- or `world.defaultContactMaterial = defaultContactMaterial`
+
+### Applying forces to a body
+- `applyForce` apply a force from a specified point 
+
 
 ## Resources 
 

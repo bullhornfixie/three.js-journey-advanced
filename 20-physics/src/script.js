@@ -42,6 +42,7 @@ const defaultContactMaterial = new CANNON.ContactMaterial(
   }
 )
 world.addContactMaterial(defaultContactMaterial)
+world.defaultContactMaterial = defaultContactMaterial
 
 // Sphere 
 const sphereShape = new CANNON.Sphere(0.5)
@@ -49,14 +50,15 @@ const sphereBody = new CANNON.Body({
   mass: 1, 
   position: new CANNON.Vec3(0, 3, 0), // x, y, z
   shape: sphereShape,
-  material: defaultContactMaterial
+  //  material: defaultContactMaterial
 })
+sphereBody.applyLocalForce(new CANNON.Vec3(150, 0, 0), new CANNON.Vec3(0, 0, 0)) // push force on x axes 
 world.addBody(sphereBody)
 
 // Floor
 const floorShape = new CANNON.Plane()
 const floorBody = new CANNON.Body()
-floorBody.material = defaultContactMaterial
+// floorBody.material = defaultContactMaterial
 floorBody.mass = 0
 floorBody.addShape(floorShape)
 floorBody.quaternion.setFromAxisAngle(
@@ -162,6 +164,9 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
     const deltaTime = elapsedTime - oldElapsedTime
     oldElapsedTime = elapsedTime
+
+    // Update physics world 
+    sphereBody.applyForce(new CANNON.Vec3(- 0.5, 0, 0), sphereBody.position)
     
     world.step(1 / 60, deltaTime, 3) // fixed time stamp, time elapsed, catch up for delay
 
