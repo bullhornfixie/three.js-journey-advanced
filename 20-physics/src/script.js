@@ -25,21 +25,40 @@ const environmentMapTexture = cubeTextureLoader.load([
 ])
 
 // Physics 
+
+// World 
 const world = new CANNON.World()
 world.gravity.set(0, -9.82, 0) // Vec3 Class is same as Vector3 but for physics
+
+// Materials 
+const concreteMaterial = new CANNON.Material('concrete')
+const plasticMaterial = new CANNON.Material('plastic')
+
+// What happens when plastic collides with concrete 
+const concretePlasticContactMaterial = new CANNON.ContactMaterial(
+  concreteMaterial, 
+  plasticMaterial,
+  {
+      friction: 0.1,
+      restitution: 0.7
+  }
+)
+world.addContactMaterial(concretePlasticContactMaterial)
 
 // Sphere 
 const sphereShape = new CANNON.Sphere(0.5)
 const sphereBody = new CANNON.Body({
   mass: 1, 
   position: new CANNON.Vec3(0, 3, 0), // x, y, z
-  shape: sphereShape
+  shape: sphereShape,
+  material: plasticMaterial
 })
 world.addBody(sphereBody)
 
 // Floor
 const floorShape = new CANNON.Plane()
 const floorBody = new CANNON.Body()
+floorBody.material = concreteMaterial
 floorBody.mass = 0
 floorBody.addShape(floorShape)
 floorBody.quaternion.setFromAxisAngle(

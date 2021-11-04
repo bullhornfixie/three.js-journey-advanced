@@ -26,8 +26,12 @@ In this chapter we learn about physics which is one of the coolest features to a
 - a plane in three.js has edges 
 
 ### Can you change the material composite in cannon.js?
+- the plane is static so it has a mass of 0 
 - yes, you could change density so it's like concrete or jelly 
 - this is useful for say a ball bouncing on material
+
+- assigned `plasticMaterial` to `floor`
+- assigned `concreteMaterial` to `floor`
 
 ## Resources 
 
