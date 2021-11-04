@@ -8,6 +8,19 @@ import CANNON from 'cannon'
 
 // GUI
 const gui = new dat.GUI()
+const debugObject = {}
+debugObject.createSphere = () => {
+    createSphere(
+        Math.random() * 0.5,
+        {
+          x: (Math.random() - 0.5) * 3,
+          y: 3,
+          z: (Math.random() - 0.5) * 3 
+        }
+    )
+}
+gui.add(debugObject, 'createSphere')
+
 const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
@@ -163,9 +176,9 @@ const objectsToUpdate = []
 console.log(objectsToUpdate)
 
 // Create sphere x 3 
-createSphere(0.5, { x: 0, y: 3, z: 0}) // radius, position 
-createSphere(0.5, { x: 1, y: 3, z: 2})
-createSphere(0.5, { x: 1, y: 4, z: 2})
+// createSphere(0.5, { x: 0, y: 3, z: 0}) 
+// createSphere(0.5, { x: 1, y: 3, z: 2})
+// createSphere(0.5, { x: 1, y: 4, z: 2})
 
 
 // Animate

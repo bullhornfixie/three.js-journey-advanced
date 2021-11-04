@@ -46,6 +46,7 @@ In this chapter we learn about physics which is one of the coolest features to a
 - `createSphere(radius, position)`
 - each time function is called pushes a sphere to an array 
 - we then loop over array 
+- created a control on gui panel to create a sphere
 
 ## Resources 
 
