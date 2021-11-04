@@ -126,6 +126,48 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+// Utils 
+const createSphere = (radius, position) => {
+    // THREE.js mesh 
+    const mesh = new THREE.Mesh(
+        new THREE.SphereBufferGeometry(radius, 20, 20),
+        new THREE.MeshStandardMaterial({
+          metalness: 0.3,
+          rougness: 0.4,
+          envMap: environmentMapTexture
+        })
+    )
+    mesh.castShadow = true 
+    mesh.position.copy(position)
+    scene.add(mesh)
+
+    // Cannon.js body 
+    const shape = new CANNON.Sphere(radius)
+    const body = new CANNON.Body({
+        mass: 1,
+        position: new CANNON.Vec3(0, 3, 0),
+        shape: shape,
+        material: defaultMaterial,
+    })
+    body.position.copy(position)
+    world.addBody(body)
+
+    // Save in objectsToUpdate array
+    objectsToUpdate.push({
+      mesh: mesh,
+      body: body 
+    })
+}
+
+const objectsToUpdate = []
+console.log(objectsToUpdate)
+
+// Create sphere x 3 
+createSphere(0.5, { x: 0, y: 3, z: 0}) // radius, position 
+createSphere(0.5, { x: 1, y: 3, z: 2})
+createSphere(0.5, { x: 1, y: 4, z: 2})
+
+
 // Animate
 const clock = new THREE.Clock()
 let oldElapsedTime = 0 
@@ -137,9 +179,13 @@ const tick = () =>
     oldElapsedTime = elapsedTime
 
     // Update physics world 
-    
     world.step(1 / 60, deltaTime, 3) // fixed time stamp, time elapsed, catch up for delay
 
+    for(const object of objectsToUpdate)
+    {
+      object.mesh.position.copy(object.body.position)
+    }
+    
     // Update controls
     controls.update()
 

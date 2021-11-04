@@ -40,6 +40,12 @@ In this chapter we learn about physics which is one of the coolest features to a
 ### Applying forces to a body
 - `applyForce` apply a force from a specified point 
 
+### Multiple objects in scene 
+- removed three.js and cannon.js sphere 
+- created a function which creates single sphere in three.js and cannon.js 
+- `createSphere(radius, position)`
+- each time function is called pushes a sphere to an array 
+- we then loop over array 
 
 ## Resources 
 
