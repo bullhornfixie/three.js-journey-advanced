@@ -140,16 +140,21 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 // Utils 
+const objectsToUpdate = []
+
+const sphereGeometry = new THREE.SphereBufferGeometry(1, 20, 20)
+const sphereMaterial = new THREE.MeshStandardMaterial({
+    metalness: 0.3,
+    roughness: 0.4,
+    envMap: environmentMapTexture
+})
+
+
 const createSphere = (radius, position) => {
+
     // THREE.js mesh 
-    const mesh = new THREE.Mesh(
-        new THREE.SphereBufferGeometry(radius, 20, 20),
-        new THREE.MeshStandardMaterial({
-          metalness: 0.3,
-          rougness: 0.4,
-          envMap: environmentMapTexture
-        })
-    )
+    const mesh = new THREE.Mesh(sphereGeometry, sphereMaterial)
+    mesh.scale.set(radius, radius, radius)
     mesh.castShadow = true 
     mesh.position.copy(position)
     scene.add(mesh)
@@ -171,15 +176,6 @@ const createSphere = (radius, position) => {
       body: body 
     })
 }
-
-const objectsToUpdate = []
-console.log(objectsToUpdate)
-
-// Create sphere x 3 
-// createSphere(0.5, { x: 0, y: 3, z: 0}) 
-// createSphere(0.5, { x: 1, y: 3, z: 2})
-// createSphere(0.5, { x: 1, y: 4, z: 2})
-
 
 // Animate
 const clock = new THREE.Clock()
