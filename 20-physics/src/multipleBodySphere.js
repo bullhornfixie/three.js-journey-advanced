@@ -177,6 +177,8 @@ const createSphere = (radius, position) => {
     })
 }
 
+createSphere(0.5, {x: 0, y: 1, z: 0})
+
 // Animate
 const clock = new THREE.Clock()
 let oldElapsedTime = 0 
