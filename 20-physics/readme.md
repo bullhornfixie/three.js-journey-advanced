@@ -32,6 +32,8 @@ In this chapter we learn about physics which is one of the coolest features to a
 
 - assigned `plasticMaterial` to `floor`
 - assigned `concreteMaterial` to `floor`
+- increase restitution of contact material, ball bounces higher 
+- then combined these materials to create a single **default material**
 
 ## Resources 
 
