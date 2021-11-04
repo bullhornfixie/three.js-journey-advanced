@@ -4,25 +4,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 import CANNON from 'cannon'
 
-console.log(CANNON)
+// console.log(CANNON)
 
-/**
- * Debug
- */
+// GUI
 const gui = new dat.GUI()
-
-/**
- * Base
- */
-// Canvas
 const canvas = document.querySelector('canvas.webgl')
-
-// Scene
 const scene = new THREE.Scene()
 
-/**
- * Textures
- */
+// Textures 
 const textureLoader = new THREE.TextureLoader()
 const cubeTextureLoader = new THREE.CubeTextureLoader()
 
@@ -35,9 +24,38 @@ const environmentMapTexture = cubeTextureLoader.load([
     '/textures/environmentMaps/0/nz.png'
 ])
 
-/**
- * Test sphere
- */
+// Physics 
+const world = new CANNON.World()
+world.gravity.set(0, -9.82, 0) // Vec3 Class is same as Vector3 but for physics
+
+// Sphere 
+const sphereShape = new CANNON.Sphere(0.5)
+const sphereBody = new CANNON.Body({
+  mass: 1, 
+  position: new CANNON.Vec3(0, 3, 0), // x, y, z
+  shape: sphereShape
+})
+world.addBody(sphereBody)
+
+// Floor
+const floorShape = new CANNON.Plane()
+const floorBody = new CANNON.Body()
+floorBody.mass = 0
+floorBody.addShape(floorShape)
+floorBody.quaternion.setFromAxisAngle(
+  new CANNON.Vec3(-1, 0, 0),
+  Math.PI * 0.5 
+)
+world.addBody(floorBody)
+
+/* 
+Notes on Floor 
+- by default the floor will face camera
+- we need to rotate the floor on the x axes 
+*/
+
+
+// Sphere 
 const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 32, 32),
     new THREE.MeshStandardMaterial({
@@ -50,9 +68,7 @@ sphere.castShadow = true
 sphere.position.y = 0.5
 scene.add(sphere)
 
-/**
- * Floor
- */
+// Floor 
 const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(10, 10),
     new THREE.MeshStandardMaterial({
@@ -66,9 +82,7 @@ floor.receiveShadow = true
 floor.rotation.x = - Math.PI * 0.5
 scene.add(floor)
 
-/**
- * Lights
- */
+// Lights 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.7)
 scene.add(ambientLight)
 
@@ -83,9 +97,7 @@ directionalLight.shadow.camera.bottom = - 7
 directionalLight.position.set(5, 5, 5)
 scene.add(directionalLight)
 
-/**
- * Sizes
- */
+// Sizes 
 const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
@@ -106,10 +118,7 @@ window.addEventListener('resize', () =>
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-/**
- * Camera
- */
-// Base camera
+// Camera 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.set(- 3, 3, 3)
 scene.add(camera)
@@ -118,9 +127,7 @@ scene.add(camera)
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 
-/**
- * Renderer
- */
+// Renderer 
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas
 })
@@ -129,14 +136,22 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-/**
- * Animate
- */
+// Animate
 const clock = new THREE.Clock()
+let oldElapsedTime = 0 
 
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
+    const deltaTime = elapsedTime - oldElapsedTime
+    oldElapsedTime = elapsedTime
+    
+    world.step(1 / 60, deltaTime, 3) // fixed time stamp, time elapsed, catch up for delay
+
+    sphere.position.copy(sphereBody.position)
+    // sphere.position.x = sphereBody.position.x
+    // sphere.position.y = sphereBody.position.y 
+    // sphere.position.z = sphereBody.position.z
 
     // Update controls
     controls.update()

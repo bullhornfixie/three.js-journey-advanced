@@ -13,6 +13,21 @@ In this chapter we learn about physics which is one of the coolest features to a
 - Physijs combines three.js and physics 
 - cannon.js is the one use in this lesson `npi i cannon`
 - create a 3D world and a 2D physics world 
+- in three.js we create **meshes** in cannon.js we create **bodies**
+- if you want to create a body, you need to create a shape first 
+
+### Three.js and physics world 
+- you want the three.js world to update according to physics world 
+- gravity is - and mass + > ball will fall 
+- gravity is + and mass + > ball will rise 
+
+- if an object has a mass of 0 it will be static 
+- a plane in cannon.js is infinite (no edges)
+- a plane in three.js has edges 
+
+### Can you change the material composite in cannon.js?
+- yes, you could change density so it's like concrete or jelly 
+- this is useful for say a ball bouncing on material
 
 ## Resources 
 
