@@ -48,7 +48,20 @@ In this chapter we learn about physics which is one of the coolest features to a
 - we then loop over array 
 - created a control on gui panel to create a sphere
 
-## Resources 
+### Cannon.js 
+- cannon.js hasn't been updated for years 
+- someone forked the repo and made updates 
+- `npm i cannon-es@0.15.1`
+- `import * as CANNON from 'cannon-es'`
+
+### Ammo.js 
+- has more features but harder to use 
+- it's a portage of bullet 
+
+### PHYSIJS
+- ease the implementation of physics in three.js 
+- rather than create a three.js mesh and cannon.js body 
+- we create a single mesh 
 
 
 
