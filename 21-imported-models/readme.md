@@ -32,5 +32,15 @@ Why do we need models? so far on the course we have created simple shapes like a
 - the `gtlf object` comes with many children within the object group 
 - sometimes a model is made up from one child and sometimes it's children
 - use `Draco` file format for better performance and need `DRACOLoader`
+- use `Draco` when you have larger geometries 
+
+### Animating A 3D Model 
+- create an `AnimationMixer` and send the gtlf.scene as parameter
+- mixer needs to update itself on each frame 
+
+### Tip 
+- variables created inside a function are not accessible by other functions - scope 
+- to fix, create var outside function first `let` not `const` 
+- then update variable in function  
 
 ## Resources 
