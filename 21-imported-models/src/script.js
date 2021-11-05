@@ -23,11 +23,15 @@ gltfLoader.load(
   '/models/FlightHelmet/glTF/FlightHelmet.gltf',
   (gltf) =>
   {
-    //  console.log(gltf)
-    while(gltf.scene.children.length > 0)
-    {
-      scene.add(gltf.scene.children[0])
-    }
+     console.log(gltf)
+
+     const children = [...gltf.scene.children]
+     console.log(children)
+     // spread operator takes the values from the array and puts in new array
+
+     for(const child of children) {
+         scene.add(child)
+     }
   }
 )
 
