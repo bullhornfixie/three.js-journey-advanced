@@ -30,6 +30,7 @@ Why do we need models? so far on the course we have created simple shapes like a
 - `GLTFLoader`
 - you can also use a `LoadingManager` in conjunction
 - the `gtlf object` comes with many children within the object group 
-- sometimes a model is made up from one child and sometimes it's children 
+- sometimes a model is made up from one child and sometimes it's children
+- use `Draco` file format for better performance and need `DRACOLoader`
 
 ## Resources 
