@@ -17,7 +17,7 @@ Why do we need models? so far on the course we have created simple shapes like a
 
 ### GLTF File Formats 
 - glTF 
-- glTF-Binary 
+- glTF-Binary np
 - glTF-Draco 
 - glTF-Embedded
 
@@ -28,6 +28,7 @@ Why do we need models? so far on the course we have created simple shapes like a
 
 ### Importing 
 - `GLTFLoader`
-- you can also use a LoadingManager in conjunction
+- you can also use a `LoadingManager` in conjunction
+- the `gtlf object` comes with many children within the object group 
 
 ## Resources 
