@@ -37,10 +37,17 @@ Why do we need models? so far on the course we have created simple shapes like a
 ### Animating A 3D Model 
 - create an `AnimationMixer` and send the gtlf.scene as parameter
 - mixer needs to update itself on each frame 
+- note, you only want the mixer to update once it's loaded object 
+- can be a few seconds delay, so use a conditional 
 
 ### Tip 
 - variables created inside a function are not accessible by other functions - scope 
 - to fix, create var outside function first `let` not `const` 
 - then update variable in function  
 
-## Resources 
+### THREE.js Editor 
+- [link](https://threejs.org/editor/)
+- like a tiny online 3D editor 
+- good way to test 3D models 
+- remember you can only see a mesh with a light
+
