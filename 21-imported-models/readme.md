@@ -28,5 +28,6 @@ Why do we need models? so far on the course we have created simple shapes like a
 
 ### Importing 
 - `GLTFLoader`
+- you can also use a LoadingManager in conjunction
 
 ## Resources 
