@@ -13,3 +13,10 @@ In this lesson we look at creating our own models in Blender. There are multiple
 
 
 ## Key Learning Points 
+
+### Blender 
+- In Blender the camera facing down is Z 
+- AA unselects everything 
+- shift + A creates list of objects
+- to delete object > highlight + X
+- object panel fn + F9
