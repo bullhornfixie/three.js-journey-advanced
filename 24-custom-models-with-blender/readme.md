@@ -11,7 +11,6 @@ In this lesson we look at creating our own models in Blender. There are multiple
 - Marmoset Toolbag 
 - Substance Painter 
 
-
 ## Key Learning Points 
 
 ### Blender 
@@ -38,6 +37,8 @@ In this lesson we look at creating our own models in Blender. There are multiple
 - S and then move mouse to scale
 
 ### Resources
+Use version 2.8 or above. 
+
 [Moving objects](https://www.youtube.com/watch?v=4mhtHnHvrZk)
 [Adding lights](https://www.youtube.com/watch?v=EdNBfKg5uVo)
 [Blender Youtube Channel](https://www.youtube.com/user/)
