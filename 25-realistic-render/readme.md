@@ -20,4 +20,8 @@ In this lesson, we will learn many techniques to improve how our model looks onc
 - Executes the callback on this object and all descendants(children)
 - Using this function as we want to apply the directional light to the material composing background
 
+### Encoding 
+- `outputEncoding` property controls the output render encoding 
+- Default encoding is `THREE.LinearEncoding` and we should use `THREE.sRGBEncoding`
+
 ## Resources 
