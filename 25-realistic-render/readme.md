@@ -8,7 +8,11 @@ In this lesson, we will learn many techniques to improve how our model looks onc
 - Changing light intensities from default scale to a physically correct scale
 - The benefit of this is if you import a model from blender with a light, result will be the same 
 - The model imported is not compressed and thus do not need a draco loader to import 
+- Add rotation of a model to gui panel 
 
-
+### Environment mapping
+- An environment map is like a background photo 
+- It can be a 360 photo or 6 photos that compose a cube
+- Use `CubeTextureLoader`
 
 ## Resources 
