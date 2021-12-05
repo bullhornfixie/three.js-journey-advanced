@@ -31,8 +31,6 @@ In this lesson, we will learn many techniques to improve how our model looks onc
 - High Dynamic Range (HDR) to Low Dynamic Range (LDR)
 
 ## Resources 
-[sRGBEncoding1](https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/
-https://medium.com/game-dev-daily/the-srgb-learning-curve-773b7f68cf7a) <br>
+[sRGBEncoding](https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/
+https://medium.com/game-dev-daily/the-srgb-learning-curve-773b7f68cf7a) 
 
-[sRGBEncoding2](https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/
-https://medium.com/game-dev-daily/the-srgb-learning-curve-773b7f68cf7a)
