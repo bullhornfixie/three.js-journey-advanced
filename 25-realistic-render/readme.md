@@ -1,5 +1,8 @@
 # Chapter 25 - Realistic Render 
 
+![alt text](./static/screenshot-lesson-25.png)
+
+
 ## Introduction 
 In this lesson, we will learn many techniques to improve how our model looks once rendered in Three.js. Note that some techniques may impact performance. 
 
@@ -24,4 +27,11 @@ In this lesson, we will learn many techniques to improve how our model looks onc
 - `outputEncoding` property controls the output render encoding 
 - Default encoding is `THREE.LinearEncoding` and we should use `THREE.sRGBEncoding`
 
+### Tone Mapping
+- High Dynamic Range (HDR) to Low Dynamic Range (LDR)
+
 ## Resources 
+[sRGBEncoding](https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/
+https://medium.com/game-dev-daily/the-srgb-learning-curve-773b7f68cf7a)
+[sRGBEncoding](https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/
+https://medium.com/game-dev-daily/the-srgb-learning-curve-773b7f68cf7a)
