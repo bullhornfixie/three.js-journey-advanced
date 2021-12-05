@@ -26,6 +26,7 @@ const updateAllMaterials = () => {
        {
            child.material.envMap = environmentMap
            child.material.envMapIntensity = debugObject.envMapIntensity
+           child.material.needsUpdate = true 
        }
     }
   )
@@ -110,6 +111,24 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.physicallyCorrectLights = true
 renderer.outputEncoding = THREE.sRGBEncoding
+renderer.toneMapping = THREE.ACESFilmicToneMapping
+renderer.toneMappingExposure = 3
+
+gui
+   .add(renderer, 'toneMapping', {
+        No: THREE.NoToneMapping,
+        Linear: THREE.ReinhardToneMapping,
+        ReinhardToneMapping: THREE.ReinhardToneMapping,
+        Cineon: THREE.CineonToneMapping,
+        ACESFilmic: THREE.ACESFilmicToneMapping
+})
+.onFinishChange(() =>
+{
+   renderer.toneMapping = Number(renderer.toneMapping)
+   updateAllMaterials()
+})
+
+gui.add(renderer, 'toneMappingExposure').min(0).max(10).step(0.001)
 
 // Animate 
 const tick = () =>
