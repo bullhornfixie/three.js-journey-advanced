@@ -111,14 +111,14 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.physicallyCorrectLights = true
 renderer.outputEncoding = THREE.sRGBEncoding
-renderer.toneMapping = THREE.ACESFilmicToneMapping
+renderer.toneMapping = THREE.ReinhardToneMapping
 renderer.toneMappingExposure = 3
 
 gui
    .add(renderer, 'toneMapping', {
         No: THREE.NoToneMapping,
-        Linear: THREE.ReinhardToneMapping,
-        ReinhardToneMapping: THREE.ReinhardToneMapping,
+        Linear: THREE.LinearToneMapping,
+        Reinhard: THREE.ReinhardToneMapping,
         Cineon: THREE.CineonToneMapping,
         ACESFilmic: THREE.ACESFilmicToneMapping
 })
