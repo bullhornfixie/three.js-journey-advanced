@@ -31,5 +31,4 @@ In this lesson, we will learn many techniques to improve how our model looks onc
 - High Dynamic Range (HDR) to Low Dynamic Range (LDR)
 
 ## Resources 
-[link](https://stackoverflow.com/questions/7653483/github-relative-link-in-markdown-file)
-
+[sRGBEncoding](https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/)
