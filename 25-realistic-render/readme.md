@@ -15,4 +15,9 @@ In this lesson, we will learn many techniques to improve how our model looks onc
 - It can be a 360 photo or 6 photos that compose a cube
 - Use `CubeTextureLoader`
 
+### Traverse
+- `scene.traverse`
+- Executes the callback on this object and all descendants(children)
+- Using this function as we want to apply the directional light to the material composing background
+
 ## Resources 
