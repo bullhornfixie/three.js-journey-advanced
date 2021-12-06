@@ -10,5 +10,15 @@ But real life projects tend to have much more code and this lesson shows us how 
 ## Key Learning Points 
 
 
+### Modules 
+- Used to break down large chunks of javaScript into smaller pieces 
+- Keep it simple but exporting one thing per file 
+
+### Webpack 
+- It is a BUILD PROCESS
+- It is taking your files, running through a conversion and spitting them out into something browser understands 
+- It has features such as `tree shaking` removing dead code 
+- Next.js uses webpack 
+
 ## Resources 
-[sRGBEncoding](https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/)
+[What is webpack?](https://www.youtube.com/watch?v=nfmvexyoHXE)
