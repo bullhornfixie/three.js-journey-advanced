@@ -7,8 +7,15 @@ To this point, all the exercises have been small enough to fit into a single Jav
 
 But real life projects tend to have much more code and this lesson shows us how to structure the code using concepts like classes and modules. 
 
-## Key Learning Points 
+## Key Learning Points
+- Classes allow us to use Object Orientated Programming (OOP)
+- Classes are blueprints for objects e.g. a robot 
+- We can then create many robots using the same blueprint 
 
+- Functions inside classes are called `methods`
+- `constructor()` method is called automatically when a class is instantiated 
+- Standard methods need to be explicitly called 
+- By using `this.name = name` you are giving the class a property
 
 ### Modules 
 - Used to break down large chunks of javaScript into smaller pieces 
