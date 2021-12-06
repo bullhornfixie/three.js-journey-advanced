@@ -5,28 +5,6 @@ import * as dat from 'lil-gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { oneThing, anotherThing }from './modulesTest.js'
 
-console.log(oneThing.hello)
-console.log(anotherThing.hello)
-
-class Robot 
-{
-    constructor(name)
-    {
-      this.name = name 
-
-      console.log(`I am ${this.name}. Thank you creator`)
-    }
-    sayHi() 
-    {
-      console.log(`Hello! My name is ${this.name}`)
-    }
-}
-const wallE = new Robot('Wall-E')
-const ultron = new Robot('Ultron')
-const astroBoy = new Robot('Astro Boy')
-
-astroBoy.sayHi()
-
 // /**
 //  * Loaders
 //  */
