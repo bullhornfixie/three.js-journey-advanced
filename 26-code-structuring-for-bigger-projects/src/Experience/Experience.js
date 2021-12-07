@@ -1,11 +1,23 @@
+import Sizes from "./Utils/Sizes"
+
 export default class Experience 
 {
-    constructor() 
+    constructor(canvas) 
     {
-      // Global access
-      // This enables you to access class via console
-      window.experience = this 
-      
-      console.log('Here starts the experience')
+      // Global access                      
+      window.experience = this // This enables you to access class via console
+
+      // Canvas 
+      this.canvas = canvas
+
+      // Canvas sizing setup 
+      // Instantiate new sizes class 
+      this.sizes = new Sizes() 
+     
+      // The sizes class inherited the on method from EventEmitter class 
+      this.sizes.on('resize', () => 
+      {
+        console.log('I heard a resize')
+      })
     }
 }
