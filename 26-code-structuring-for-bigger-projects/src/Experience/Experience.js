@@ -1,4 +1,6 @@
+import * as THREE from 'three'
 import Sizes from "./Utils/Sizes"
+import Time from "./Utils/Time"
 
 export default class Experience 
 {
@@ -10,14 +12,32 @@ export default class Experience
       // Canvas 
       this.canvas = canvas
 
-      // Canvas sizing setup 
-      // Instantiate new sizes class 
+      // Setup other classes and instantiate
       this.sizes = new Sizes() 
+      this.time = new Time()
+      this.scene = new THREE.Scene()
      
-      // The sizes class inherited the on method from EventEmitter class 
+      // Sizes resize event 
+      // on() is imported from EventEmitter
       this.sizes.on('resize', () => 
       {
-        console.log('I heard a resize')
+        this.resize() // listens for a resize and calls resize method below 
       })
+
+      // Time tick event 
+      this.time.on('tick', () => {
+        this.update()
+      })
+    }
+    
+    resize()
+    {
+      console.log('A resize occured')
+      console.log(`width ${this.sizes.width}, height ${this.sizes.height}`)
+    }
+
+    update()
+    {
+
     }
 }

@@ -8,6 +8,9 @@ To this point, all the exercises have been small enough to fit into a single Jav
 But real life projects tend to have much more code and this lesson shows us how to structure the code using concepts like classes and modules. 
 
 ## Key Learning Points
+- Classes
+- Modules 
+- Setting up classes for resizing canvas 
 
 ## Classes
 - Classes allow us to use Object Orientated Programming (OOP)
