@@ -14,6 +14,8 @@ export default class Camera
 
         this.setInstance()
         this.setOrbitControls()
+
+        console.log('Camera class instantiated')
     }
 
     // New Camera 

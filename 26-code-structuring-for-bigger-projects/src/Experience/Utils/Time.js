@@ -12,6 +12,8 @@ export default class Time extends EventEmitter
         this.elapsed = 0
         this.delta = 16 // default screens are running at 16 fps
 
+        console.log('Time class instantiated')
+
         window.requestAnimationFrame(() => 
         {
           this.tick()

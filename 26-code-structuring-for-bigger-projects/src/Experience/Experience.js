@@ -11,6 +11,8 @@ a second time it will return a copy of the original instance.
 
 The reason being, the experience requires the canvas to be constructed. If we create two instances of Experience 
 we will have two canvases which causes the call stack to be exceeded and crash. 
+
+This class is a singleton which means it can only be instantiated once. 
 */
 
 
@@ -31,13 +33,16 @@ export default class Experience
       // Canvas 
       this.canvas = canvas
 
+      console.log('Experience class instantiated')
+
       // Setup other classes and instantiate
       this.sizes = new Sizes() 
       this.time = new Time()
       this.scene = new THREE.Scene()
       this.camera = new Camera() // sending experience class as parameter to access sizes and width
       this.renderer = new Renderer()
-     
+
+      
       // Sizes resize event 
       // on() is imported from EventEmitter
       this.sizes.on('resize', () => 
@@ -54,7 +59,6 @@ export default class Experience
     resize()
     {
       console.log('A resize occured')
-      console.log(`width ${this.sizes.width}, height ${this.sizes.height}`)
 
       this.camera.resize()
     }
