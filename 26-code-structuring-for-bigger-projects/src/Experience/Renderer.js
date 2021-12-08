@@ -37,13 +37,13 @@ export default class Renderer
 
     resize()
     {
-        this.camera.resize()
-        this.renderer.resize()
+        this.instance.setSize(this.sizes.width, this.sizes.height)
+        this.instance.setPixelRatio(this.sizes.pixelRatio)
     }
 
     update()
     {
-        this.camera.update()
+        this.instance.render(this.scene, this.camera.instance)
     }
     
 }

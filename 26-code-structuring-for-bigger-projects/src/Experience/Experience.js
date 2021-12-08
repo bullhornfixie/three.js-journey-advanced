@@ -47,7 +47,7 @@ export default class Experience
       // on() is imported from EventEmitter
       this.sizes.on('resize', () => 
       {
-        this.resize() // listens for a resize and calls resize method below 
+        this.resize() // listens for a resize and calls resize method below which updates camera and renderer class
       })
 
       // Time tick event 
@@ -58,14 +58,16 @@ export default class Experience
     
     resize()
     {
-      console.log('A resize occured')
+        console.log('A resize occured')
 
-      this.camera.resize()
+        this.camera.resize()
+        this.renderer.resize()
     }
 
     update()
     {
-
+        this.camera.update()
+        this.renderer.update()
     }
 
 }
