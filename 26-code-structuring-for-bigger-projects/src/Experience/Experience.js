@@ -3,6 +3,7 @@ import Sizes from './Utils/Sizes.js'
 import Time from './Utils/Time.js'
 import Camera from './Camera.js'
 import Renderer from './Renderer.js'
+import World from './World/World.js'
 
 let instance = null 
 
@@ -41,6 +42,7 @@ export default class Experience
       this.scene = new THREE.Scene()
       this.camera = new Camera() // sending experience class as parameter to access sizes and width
       this.renderer = new Renderer()
+      this.world = new World()
 
       
       // Sizes resize event 
