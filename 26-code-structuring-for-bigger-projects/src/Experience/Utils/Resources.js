@@ -9,7 +9,7 @@ export default class Resources extends EventEmitter
         super()
 
         // Options
-        this.sources = sources
+        this.sources = sources // array 
 
         // Setup
         this.items = {}
@@ -17,6 +17,7 @@ export default class Resources extends EventEmitter
         this.loaded = 0 
 
         this.setLoaders()
+        this.startLoading()
     }
 
         setLoaders()
@@ -25,6 +26,62 @@ export default class Resources extends EventEmitter
             this.loaders.gltfLoader = new GLTFLoader()
             this.loaders.textureLoader = new THREE.TextureLoader()
             this.loaders.cubeTextureLoader = new THREE.CubeTextureLoader()
+        }
 
+        startLoading()
+        {
+            // Load each source by looping through array
+            // for(element in array)
+            for(const source of this.sources)
+            {
+                if(source.type === 'gltfModel')
+                {
+                    this.loaders.gltfLoader.load(
+                        source.path,
+                        (file) =>
+                        {
+                            // call function 
+                            this.sourceLoaded(source, file)
+                        }
+                    )
+                }
+                else if(source.type === 'texture')
+                {
+                    this.loaders.textureLoader.load(
+                        source.path,
+                        (file) =>
+                        {
+                            // call function
+                            this.sourceLoaded(source, file)
+                        }
+                    )
+                }
+                else if(source.type === 'cubeTexture')
+                {
+                    this.loaders.cubeTextureLoader.load(
+                        source.path,
+                        (file) =>
+                        {
+                            // call function
+                            this.sourceLoaded(source, file)
+                        }
+                    )
+                }
+            }
+        }
+
+        sourceLoaded(source, file)
+        {
+           // add file as an array to items object
+           this.items[source.name] = file
+           
+           // increment loaded count
+           this.loaded++
+
+           if(this.loaded === this.toLoad)
+           {
+               // Create event when the loads are ready
+               this.trigger('ready')
+           }
         }
 }

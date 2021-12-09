@@ -8,6 +8,7 @@ export default class World
     {
         this.experience = new Experience()
         this.scene = this.experience.scene
+        this.resources = this.experience.resources
 
 
         // Test Mesh
@@ -17,7 +18,11 @@ export default class World
         )
         this.scene.add(testMesh)
 
-        // Setup 
-        this.environment = new Environment()
+        this.resources.on('ready', () => 
+        {
+            // Create environment map once resources ready
+            this.environment = new Environment()
+        })
+        
     }
 }
