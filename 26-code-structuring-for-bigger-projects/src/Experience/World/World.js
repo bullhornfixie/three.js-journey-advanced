@@ -11,19 +11,13 @@ export default class World
         this.scene = this.experience.scene
         this.resources = this.experience.resources
 
-
-        // Test Mesh
-        const testMesh = new THREE.Mesh(
-            new THREE.BoxGeometry(1, 1, 1),
-            new THREE.MeshStandardMaterial({ wireframe: false })
-        )
-        this.scene.add(testMesh)
-
         this.resources.on('ready', () => 
         {
             // Create environment map once resources ready
+            this.floor = new Floor() 
+            // tip instantiate floor first as it's part of the scene 
+            // the environment map applies to scene 
             this.environment = new Environment()
-            this.floor = new Floor()
         })
         
     }
