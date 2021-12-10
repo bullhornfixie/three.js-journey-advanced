@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import Experience from "../Experience";
 import Environment from './Environment.js';
+import Floor from './Floor';
 
 export default class World 
 {
@@ -22,6 +23,7 @@ export default class World
         {
             // Create environment map once resources ready
             this.environment = new Environment()
+            this.floor = new Floor()
         })
         
     }

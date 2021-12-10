@@ -77,6 +77,7 @@ export default class Resources extends EventEmitter
            
            // increment loaded count
            this.loaded++
+           console.log(this.loaded)
 
            if(this.loaded === this.toLoad)
            {
