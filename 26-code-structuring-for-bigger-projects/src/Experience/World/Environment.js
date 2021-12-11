@@ -8,9 +8,17 @@ export default class Environment
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
+        this.debug = this.experience.debug
+
+        // Debug
+        if(this.debug.active)
+        {
+            this.debugFolder = this.debug.ui.addFolder('environment')
+        }
 
         this.setSunLight()
         this.setEnvironmentMap()
+
     }
 
     setSunLight()
@@ -34,7 +42,7 @@ export default class Environment
 
         this.scene.environment = this.environmentMap.texture
 
-        this.setEnvironmentMap.updateMaterial = () => 
+        this.environmentMap.updateMaterials = () => 
         {
             this.scene.traverse((child) => 
             {
@@ -43,11 +51,25 @@ export default class Environment
                     child.material.envMap = this.environmentMap.texture
                     child.material.envMapIntensity = this.environmentMap.intensity
                     child.material.needsUpdate = true
+                   
                 }
             })
         }
 
-        this.setEnvironmentMap.updateMaterial()
-    }
+        // Call above function
+        this.environmentMap.updateMaterials()
 
+        // Debug 
+        if(this.debug.active)
+        {
+            this.debugFolder
+                .add(this.environmentMap, 'intensity')
+                .name('envMapIntensity')
+                .min(0)
+                .max(4)
+                .step(0.01)
+                .onChange(this.environmentMap.updateMaterials)
+        }
+
+    }
 }
