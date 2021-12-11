@@ -11,8 +11,14 @@ export default class Fox
         // Setup 
         this.resource = this.resources.items.foxModel
 
-        console.log(this.resource)
+        this.setModel()
+    }
 
+    setModel()
+    {
+        this.model = this.resource.scene 
+        this.model.scale.set(0.02, 0.02, 0.02)
+        this.scene.add(this.model)
     }
 }
 
