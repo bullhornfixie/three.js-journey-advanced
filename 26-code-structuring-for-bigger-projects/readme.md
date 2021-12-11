@@ -13,6 +13,7 @@ But real life projects tend to have much more code and this lesson shows us how 
 - Setting up classes for resizing canvas 
 - `Singleton` a class that can only be instantiated once
 - Light onky reacts to `MeshStandardMaterial`
+- How to dispose of objects
 
 ## Classes
 - Classes allow us to use Object Orientated Programming (OOP)
