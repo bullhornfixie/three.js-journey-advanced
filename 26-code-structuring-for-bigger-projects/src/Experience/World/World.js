@@ -14,12 +14,17 @@ export default class World
 
         this.resources.on('ready', () => 
         {
-            // Objects for scene
             this.floor = new Floor() 
             this.fox = new Fox()
-            // Environment for scene
             this.environment = new Environment()
-        })
-        
+        }) 
+
     }
+
+    update()
+    {
+       if(this.fox){this.fox.update()}
+    }
+
+
 }
