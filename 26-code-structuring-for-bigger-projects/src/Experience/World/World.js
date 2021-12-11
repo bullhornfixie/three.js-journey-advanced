@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import Experience from "../Experience";
 import Environment from './Environment.js';
 import Floor from './Floor';
+import Fox from './Fox';
 
 export default class World 
 {
@@ -13,10 +14,10 @@ export default class World
 
         this.resources.on('ready', () => 
         {
-            // Create environment map once resources ready
+            // Objects for scene
             this.floor = new Floor() 
-            // tip instantiate floor first as it's part of the scene 
-            // the environment map applies to scene 
+            this.fox = new Fox()
+            // Environment for scene
             this.environment = new Environment()
         })
         
