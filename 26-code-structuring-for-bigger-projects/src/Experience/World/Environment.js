@@ -43,7 +43,6 @@ export default class Environment
                     child.material.envMap = this.environmentMap.texture
                     child.material.envMapIntensity = this.environmentMap.intensity
                     child.material.needsUpdate = true
-
                 }
             })
         }
