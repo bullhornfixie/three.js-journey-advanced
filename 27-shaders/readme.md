@@ -35,5 +35,9 @@ The GPU processes all this data according to the shader instructions. There a tw
 - Uniforms (data type)
 - `ShaderMaterial` is a three.js class (automatically adds code)
 - `RawShaderMaterial` is a three.js class (no code)
+- Installed `Shader Language Plugin` for VSCode
+- A `linter` validates code and finds potential errors 
+- Setup webpack to import glsl files > bundler/webpack.common.js
+- The `rules` in webpack.common.js file are how to handle each type of file
 
 ## Resources 
