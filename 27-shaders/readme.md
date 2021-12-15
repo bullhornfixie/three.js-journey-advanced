@@ -49,4 +49,5 @@ The GPU processes all this data according to the shader instructions. There a tw
 
 ## Resources 
 [What are shaders?](https://www.youtube.com/watch?v=sXbdF4KjNOc)
+[Book of shaders](https://thebookofshaders.com/03/)
 
