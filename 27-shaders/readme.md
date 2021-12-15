@@ -1,5 +1,7 @@
 # Chapter 27 - Shaders 
 
+![alt text](./static/screenshot-shaders.png?raw=true "Screenshot")
+
 ## Introduction 
 If we had started WebGL without Three.js, it would have been one of the first things we would have to learn and this is why native WebGL is so hard. 
 
