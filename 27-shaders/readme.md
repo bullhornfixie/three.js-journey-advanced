@@ -5,9 +5,19 @@
 ## Introduction 
 If we had started WebGL without Three.js, it would have been one of the first things we would have to learn and this is why native WebGL is so hard. 
 
-A shader is a program written in GLSL (language) that is sent to the GPU. 
+## Lesson summary 
+- Learn what is a shader 
+- Create our own simple shader 
+- Learn the glsl syntax 
+- Do some exercises
 
-### We send a lot of data to the shader 
+### What are Shaders?
+- A shader is a set of instructions for the GPU executed for every pixel on the screen
+- A shader os written in a language called glsl 
+- Or you could input a pixel position, state the color (RGB) > shader transformation - new color 
+- This can be used for adding a blue tint to your image on screen or creating a gradient on image 
+
+### What data does a Shader need?
 - Vertices coordinates 
 - Mesh transformation 
 - Information about the camera 
@@ -24,12 +34,6 @@ The GPU processes all this data according to the shader instructions. There a tw
 - Our shaders can be very simple and performant 
 - We can add custom post-processing
 
-## Lesson summary 
-- Learn what is a shader 
-- Create our own simple shader 
-- Learn the syntax 
-- Do some exercises
-
 ## Key learning points 
 - Using .glsl files with .js files
 - Vertex shaders (plot pixels)
@@ -42,12 +46,6 @@ The GPU processes all this data according to the shader instructions. There a tw
 - A `linter` validates code and finds potential errors 
 - Setup webpack to import glsl files > bundler/webpack.common.js
 - The `rules` in webpack.common.js file are how to handle each type of file
-- Learning `glsl` syntax
-
-### What are Shaders?
-- A shader is a set of instructions for the GPU executed for every pixel on the screen
-- Or you could input a pixel position, state the color (RGB) > shader transformation - new color 
-- This can be used for adding a blue tint to your image on screen or creating a gradient on image 
 
 ## Resources 
 [What are shaders?](https://www.youtube.com/watch?v=sXbdF4KjNOc)
