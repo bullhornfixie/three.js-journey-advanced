@@ -42,7 +42,7 @@ for(let i = 0; i < count; i++)
 
 geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1))
 
-// Material
+// Using a RawShaderMaterial
 const material = new THREE.RawShaderMaterial({
     // Properties
     vertexShader: testVertexShader,

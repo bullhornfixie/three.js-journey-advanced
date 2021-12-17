@@ -34,11 +34,15 @@ The GPU processes all this data according to the shader instructions. There a tw
 - Our shaders can be very simple and performant 
 - We can add custom post-processing
 
+### What is the difference between RawShaderMaterial and ShaderMaterial?
+- RawShaderMaterial is a class in three.js and has no built-in uniforms and attributes 
+- ShaderMaterial has built-in uniforms and attributes 
+
 ## Key learning points 
 - Using .glsl files with .js files
 - Vertex shaders (plot pixels)
 - Fragment shaders (color pixels)
-- Attributes (data type)
+- Attributes (data type) 
 - Uniforms (data type)
 - `ShaderMaterial` is a three.js class (automatically adds code)
 - `RawShaderMaterial` is a three.js class (no code)
@@ -50,4 +54,6 @@ The GPU processes all this data according to the shader instructions. There a tw
 ## Resources 
 [What are shaders?](https://www.youtube.com/watch?v=sXbdF4KjNOc)
 [Book of shaders](https://thebookofshaders.com/03/)
+[ShaderToy](https://www.shadertoy.com/)
+[Art of Code](https://www.youtube.com/playlist?list=PL4neAtv21WOmIrTrkNO3xCyrxg4LKkrF7)
 
